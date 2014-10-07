@@ -97,3 +97,6 @@ TARGET_POWERHAL_VARIANT :=
 
 # Custom RIL class
 BOARD_RIL_CLASS := ../../../device/samsung/serrano-common/ril/
+
+# External apps on SD
+TARGET_EXTERNAL_APPS = sdcard1
