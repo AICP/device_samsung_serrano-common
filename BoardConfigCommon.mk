@@ -26,12 +26,14 @@
 TARGET_SPECIFIC_HEADER_PATH := device/samsung/serrano-common/include
 
 # Kernel
+TARGET_ARCH := arm
+TARGET_GLOBAL_CFLAGS += -mtune=cortex-a15 -mfpu=neon-vfpv4
+TARGET_GLOBAL_CPPFLAGS += -mtune=cortex-a15 -mfpu=neon-vfpv4
+TARGET_GCC_VERSION_ARM := 4.9.3-2015.03/bin/arm-cortex_a15-linux-gnueabihf-
 BOARD_KERNEL_CMDLINE         := androidboot.hardware=qcom user_debug=23 androidboot.bootdevice=msm_sdcc.1
 BOARD_KERNEL_BASE            := 0x80200000
 BOARD_MKBOOTIMG_ARGS         := --ramdisk_offset 0x02000000
 BOARD_KERNEL_PAGESIZE        := 2048
-TARGET_ARCH := arm
-TARGET_GCC_VERSION_ARM := 4.9.3-2015.03/bin/arm-cortex_a15-linux-gnueabihf-
 TARGET_KERNEL_SOURCE         := kernel/samsung/f4ktion
 TARGET_KERNEL_CONFIG         := f4ktion_defconfig
 TARGET_KERNEL_SELINUX_CONFIG := selinux_defconfig
