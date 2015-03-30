@@ -30,12 +30,10 @@ BOARD_KERNEL_CMDLINE         := androidboot.hardware=qcom user_debug=23 androidb
 BOARD_KERNEL_BASE            := 0x80200000
 BOARD_MKBOOTIMG_ARGS         := --ramdisk_offset 0x02000000
 BOARD_KERNEL_PAGESIZE        := 2048
-TARGET_KERNEL_SOURCE         := kernel/samsung/msm8930-common
-ifneq ($(filter serranoltespr serranolteusc,$(TARGET_DEVICE)),)
-TARGET_KERNEL_CONFIG         := cyanogen_serrano_usa_defconfig
-else
-TARGET_KERNEL_CONFIG         := cyanogen_serrano_defconfig
-endif
+TARGET_ARCH := arm
+TARGET_GCC_VERSION_ARM := 4.9.3-2015.03/bin/arm-cortex_a15-linux-gnueabihf-
+TARGET_KERNEL_SOURCE         := kernel/samsung/f4ktion
+TARGET_KERNEL_CONFIG         := f4ktion_defconfig
 TARGET_KERNEL_SELINUX_CONFIG := selinux_defconfig
 
 TARGET_BOOTLOADER_BOARD_NAME := MSM8960
@@ -50,6 +48,11 @@ BOARD_RECOVERYIMAGE_PARTITION_SIZE := 10485760
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1572864000
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 5821660160
 BOARD_FLASH_BLOCK_SIZE := 131072
+
+# Ensure f2fstools are built
+ifeq ($(HOST_OS),linux)
+TARGET_USERIMAGES_USE_F2FS := true
+endif
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/serrano-common/bluetooth
