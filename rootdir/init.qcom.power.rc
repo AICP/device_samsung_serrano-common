@@ -76,7 +76,7 @@ on property:dev.bootcomplete=1
     write /sys/devices/system/cpu/cpufreq/impulse/timer_rate 30000
     write /sys/devices/system/cpu/cpufreq/impulse/max_freq_hysteresis 100000
     write /sys/devices/system/cpu/cpufreq/impulse/timer_slack 30000
-    write /dev/cpuctl/apps/cpu.notify_on_migrate 1
+    write /dev/cpuctl/cpu.notify_on_migrate 1
     write /sys/module/msm_thermal/core_control/enabled 1
     chown system system /sys/devices/system/cpu/cpu1/online
     chmod 664 /sys/devices/system/cpu/cpu1/online
