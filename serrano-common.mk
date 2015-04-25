@@ -91,10 +91,6 @@ PRODUCT_PACKAGES += \
     FM2 \
     FMRecord
 
-# Lights
-PRODUCT_PACKAGES += \
-    lights.msm8960
-
 # IR package
 PRODUCT_PACKAGES += \
     consumerir.msm8960

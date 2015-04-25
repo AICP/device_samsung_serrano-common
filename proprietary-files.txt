@@ -92,6 +92,9 @@ vendor/lib/liblocationservice.so
 bin/geomagneticd
 lib/hw/sensors.msm8960.so
 
+# BLN
+lib/hw/lights.msm8960.so
+
 # Camera
 bin/mm-qcamera-daemon
 lib/hw/camera.vendor.msm8960.so
