@@ -72,3 +72,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # QC Perf
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.extension_library=/system/lib/libqc-opt.so
+
+#AICP Device Maintainers
+ro.aicp.maintainer=semdoc (doc HD)
