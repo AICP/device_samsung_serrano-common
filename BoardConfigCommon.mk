@@ -93,3 +93,6 @@ BOARD_HARDWARE_CLASS += device/samsung/serrano-common/cmhw
 ifeq ($(WITH_TWRP),true)
 -include device/samsung/serrano-common/twrp.mk
 endif
+
+# Enable real time lockscreen charging current values
+BOARD_GLOBAL_CFLAGS += -DBATTERY_REAL_INFO
